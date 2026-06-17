@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack Figurinhas Copa 2026 — Complete Seu Álbum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary:   #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card:      rgba(255,255,255,0.04);
+      --gold:         #f5c842;
+      --gold-dark:    #c9a227;
+      --neon:         #00e5ff;
+      --neon-glow:    rgba(0,229,255,0.35);
+      --green:        #00e676;
+      --red:          #ff3040;
+      --white:        #ffffff;
+      --text:         #e0e0e0;
+      --text-muted:   #9e9e9e;
+      --glass-border: rgba(255,255,255,0.08);
+      --glass-bg:     rgba(255,255,255,0.03);
+      --radius:       16px;
+      --radius-sm:    10px;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .features-grid, .numbers-grid, .price-features,
+    .ig-comments-wrapper, .faq-list { text-align: left; }
+
+    .text-gold { color: var(--gold); }
+    .text-white { color: var(--white); }
+
+    .glow-text {
+      text-shadow:
+        rgba(245,200,66,0.5) 0px 0px 20px,
+        rgba(245,200,66,0.2) 0px 0px 60px;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark), var(--gold));
+      overflow: hidden;
+      white-space: nowrap;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 8px 0;
+    }
+    .ticker { display: inline-block; animation: ticker-scroll 40s linear infinite; }
+    .ticker-inner {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--bg-primary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .ticker-sep { margin: 0 16px; opacity: 0.5; }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s cubic-bezier(.4,0,.2,1);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-primary);
+      box-shadow: rgba(245,200,66,0.3) 0px 4px 25px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: rgba(245,200,66,0.5) 0px 8px 40px;
+    }
+    .btn-large { padding: 20px 48px; font-size: 18px; }
+    .pulse-anim { animation: pulse 2.5s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: rgba(245,200,66,0.3) 0px 4px 25px; }
+      50%       { box-shadow: rgba(245,200,66,0.6) 0px 8px 50px, rgba(245,200,66,0.2) 0px 0px 80px; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(245,200,66,0.06) 0%, transparent 60%),
+        var(--bg-primary);
+      overflow: hidden;
+    }
+    .badge-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(245,200,66,0.15), rgba(245,200,66,0.05));
+      border: 1px solid rgba(245,200,66,0.3);
+      color: var(--gold);
+      padding: 8px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: fadeInDown 0.8s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 0.95;
+      margin-bottom: 20px;
+      animation: fadeInDown 0.9s ease 0.1s both;
+    }
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 18px;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      animation: fadeInDown 1s ease 0.2s both;
+    }
+    .hero-cta { animation: fadeInDown 1s ease 0.3s both; }
+
+    /* Urgência hero */
+    .hero-urgency {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,48,64,0.1);
+      border: 1px solid rgba(255,48,64,0.3);
+      color: #ff3040;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    /* ── ALBUM / CARROSSEL ── */
+    .album-section {
+      padding: 80px 0;
+      background: var(--bg-secondary);
+      overflow: hidden;
+    }
+    .album-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .album-section .section-sub {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    .carousel-container {
+      overflow: hidden;
+      padding: 30px 0;
+      mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+    }
+    .carousel-track {
+      display: flex;
+      gap: 20px;
+      animation: carousel-slide 30s linear infinite;
+      width: max-content;
+    }
+    .player-card {
+      flex-shrink: 0;
+      width: 200px;
+      transition: transform 0.4s;
+    }
+    .player-card:hover { transform: scale(1.08) translateY(-8px); }
+    .card-inner {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid var(--glass-border);
+      box-shadow: rgba(0,0,0,0.4) 0px 8px 32px;
+      transition: 0.3s cubic-bezier(.4,0,.2,1);
+      background: var(--bg-secondary);
+    }
+    .card-inner:hover {
+      border-color: var(--gold);
+      box-shadow: rgba(245,200,66,0.2) 0px 8px 40px;
+    }
+    .card-inner img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+    }
+    .card-label {
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+    }
+    @keyframes carousel-slide {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── NUMBERS ── */
+    .numbers-section {
+      padding: 80px 0;
+      background: var(--bg-primary);
+    }
+    .numbers-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .num-card {
+      padding: 32px 20px;
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      transition: 0.3s cubic-bezier(.4,0,.2,1);
+      position: relative;
+      overflow: hidden;
+    }
+    .num-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 60%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon), transparent);
+      opacity: 0.5;
+    }
+    .num-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,229,255,0.2);
+    }
+    .num-val {
+      font-family: var(--font-display);
+      font-size: 56px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .num-label { font-weight: 700; font-size: 14px; color: var(--white); margin-bottom: 4px; }
+    .num-desc { font-size: 13px; color: var(--text-muted); }
+
+    /* ── FEATURES ── */
+    .features-section {
+      padding: 80px 0;
+      background: var(--bg-secondary);
+    }
+    .features-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 2px;
+      color: var(--white);
+      text-align: center;
+    }
+    .features-section .section-sub {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-top: 8px;
+      text-align: center;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .feature-card {
+      padding: 32px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245,200,66,0.2);
+      background: rgba(255,255,255,0.06);
+    }
+    .feature-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, rgba(245,200,66,0.15), rgba(245,200,66,0.05));
+      color: var(--gold);
+      font-size: 24px;
+    }
+    .feature-title {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .feature-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; text-align: center; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      padding: 80px 0;
+      background: var(--bg-primary);
+    }
+    .testimonials-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .testimonials-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .testimonials-header h2 {
+      font-size: clamp(22px, 5vw, 36px);
+      letter-spacing: 1px;
+      flex: 1;
+    }
+    .testimonials-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .rating-stars { display: flex; gap: 3px; }
+    .rating-stars i { color: var(--gold); font-size: 18px; }
+    .rating-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .ig-comments-wrapper {
+      max-width: 480px;
+      margin: 24px auto 0;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* Cada linha de comentário */
+    .ig-comment {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+    }
+    .ig-comment + .ig-comment {
+      border-top: 1px solid #1a1a1a;
+    }
+
+    /* Avatar */
+    .ig-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      padding: 2px;
+      flex-shrink: 0;
+    }
+    .ig-avatar-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: #262626;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #fff;
+      overflow: hidden;
+    }
+    .ig-avatar-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+    /* Corpo do comentário */
+    .ig-comment-body { flex: 1; min-width: 0; }
+    .ig-comment-header {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .ig-username { font-size: 13px; font-weight: 700; color: #fff; }
+    .ig-time     { font-size: 12px; color: #8e8e8e; }
+    .ig-text     { font-size: 14px; color: #f0f0f0; line-height: 1.55; }
+    .ig-comment-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 7px;
+    }
+    .ig-reply  { font-size: 12px; color: #8e8e8e; font-weight: 600; cursor: pointer; }
+    .ig-enviar { font-size: 12px; color: #8e8e8e; font-weight: 600; cursor: pointer; }
+
+    /* Coração com curtidas */
+    .ig-heart {
+      margin-left: auto;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 2px;
+      flex-shrink: 0;
+    }
+    .ig-heart i       { font-size: 12px; color: #8e8e8e; }
+    .ig-heart i.liked { color: #ff3040; }
+    .ig-heart span    { font-size: 10px; color: #8e8e8e; line-height: 1; }
+
+    /* ── PRICING ── */
+    .price-section {
+      padding: 80px 0;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(245,200,66,0.08) 0%, transparent 60%),
+        var(--bg-secondary);
+    }
+    .price-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .price-section .section-sub { color: var(--text-muted); font-size: 16px; margin-top: 8px; }
+    .pricing-card-wrapper { max-width: 480px; margin: 48px auto 0; }
+    .pricing-card {
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid rgba(245,200,66,0.2);
+      border-radius: var(--radius);
+    }
+    .pricing-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--gold), transparent 40%, transparent 60%, var(--neon));
+      border-radius: var(--radius);
+      z-index: -1;
+      opacity: 0.15;
+    }
+    .discount-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ff6b35, var(--red));
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      animation: pulse-red 2s ease-in-out infinite;
+    }
+    @keyframes pulse-red {
+      0%, 100% { box-shadow: rgba(255,48,64,0.3) 0px 4px 20px; }
+      50%       { box-shadow: rgba(255,48,64,0.6) 0px 8px 40px; }
+    }
+    .price-original { font-size: 14px; color: var(--text-muted); text-decoration: line-through; margin-bottom: 8px; }
+    .price-current {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .price-currency { font-size: 24px; font-weight: 700; color: var(--gold); margin-top: 8px; }
+    .price-value { font-family: var(--font-display); font-size: 80px; color: var(--gold); line-height: 1; }
+    .price-cents { font-size: 24px; font-weight: 700; color: var(--gold); margin-top: 8px; }
+    .price-info { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    .price-features { list-style: none; margin: 24px 0; }
+    .price-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 15px;
+      color: var(--text);
+    }
+    .price-features li i { font-size: 14px; color: var(--green); flex-shrink: 0; }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .trust-item i { color: var(--green); font-size: 14px; }
+
+    /* ── PRICING GRID — sempre 2 colunas para efeito de comparação ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 40px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: start;
+    }
+
+    /* Mobile: compacta os cards para caber lado a lado */
+    @media (max-width: 639px) {
+      .pricing-grid { gap: 8px; }
+      .pricing-card { padding: 20px 10px; }
+      .plan-name { font-size: 18px; }
+      .plan-name--premium { font-size: 20px; }
+      .plan-desc { font-size: 11px; }
+      .plan-label { font-size: 9px; letter-spacing: 1px; }
+      .price-value { font-size: 52px; }
+      .price-currency, .price-cents { font-size: 16px; }
+      .price-original { font-size: 11px; }
+      .price-info { font-size: 10px; }
+      .price-features li { font-size: 11px; padding: 7px 0; gap: 6px; }
+      .price-features li i { font-size: 11px; }
+      .bonus-item { padding: 7px 8px !important; }
+      .btn-secondary-basic { font-size: 10px; padding: 11px 8px; }
+      .btn-large { font-size: 11px; padding: 13px 10px; }
+      .countdown-block { padding: 6px 8px; min-width: 36px; }
+      .countdown-num { font-size: 20px; }
+      .countdown-block--basic .countdown-num { font-size: 18px; }
+      .countdown-label { font-size: 8px; }
+      .countdown-sep { font-size: 18px; padding-top: 6px; }
+      .premium-top-badge { font-size: 9px; padding: 4px 10px; }
+      .trust-badges { gap: 8px; }
+      .trust-item { font-size: 10px; }
+    }
+
+    /* Card base */
+    .pricing-card {
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Básico — apagado, sem destaque */
+    .pricing-card--basic {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      opacity: 0.75;
+    }
+    .pricing-card--basic .price-features li { color: var(--text-muted); }
+
+    /* Premium — destaque total */
+    .pricing-card--premium {
+      background: rgba(245,200,66,0.05);
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 40px rgba(245,200,66,0.15), 0 0 80px rgba(245,200,66,0.06);
+    }
+    .pricing-card--premium::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--gold), transparent 40%, transparent 60%, var(--neon));
+      border-radius: var(--radius);
+      z-index: -1;
+      opacity: 0.12;
+    }
+
+    /* Badge topo premium */
+    .premium-top-badge {
+      position: absolute;
+      top: -1px; left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-primary);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 5px 18px;
+      border-radius: 0 0 10px 10px;
+      white-space: nowrap;
+    }
+
+    /* Labels e nomes */
+    .plan-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 24px 0 8px;
+    }
+    .plan-label--premium { color: var(--gold); }
+    .plan-name { font-family: var(--font-display); font-size: 28px; color: var(--white); margin-bottom: 6px; }
+    .plan-name--premium { font-size: 32px; color: var(--gold); }
+    .plan-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+
+    /* Botão básico — discreto */
+    .btn-secondary-basic {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-secondary-basic:hover { border-color: var(--text-muted); color: var(--white); }
+
+    /* Item bônus na lista */
+    .bonus-item {
+      background: rgba(245,200,66,0.06);
+      border-radius: 8px;
+      border-bottom: none !important;
+      margin-top: 4px;
+      padding: 10px 12px !important;
+    }
+    .bonus-item strong { color: var(--gold); }
+
+    /* Countdown básico menor */
+    .countdown-block--basic { padding: 6px 10px; min-width: 48px; }
+    .countdown-block--basic .countdown-num { font-size: 24px; color: var(--text-muted); }
+
+    /* Countdown */
+    .countdown-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 16px 0 24px;
+    }
+    .countdown-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,48,64,0.08);
+      border: 1px solid rgba(255,48,64,0.2);
+      border-radius: 10px;
+      padding: 10px 16px;
+      min-width: 60px;
+    }
+    .countdown-num { font-family: var(--font-display); font-size: 32px; color: var(--red); line-height: 1; }
+    .countdown-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+    .countdown-sep { font-family: var(--font-display); font-size: 28px; color: var(--red); align-self: flex-start; padding-top: 10px; }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 80px 0; background: var(--bg-primary); }
+    .faq-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .faq-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    .faq-list { max-width: 680px; margin: 36px auto 0; }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: left;
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--neon); }
+    .faq-icon {
+      font-size: 14px;
+      color: var(--neon);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-icon.open { transform: rotate(180deg); }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding-bottom: 20px;
+      display: none;
+    }
+    .faq-answer.open { display: block; }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta {
+      padding: 80px 0;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(245,200,66,0.06) 0%, transparent 60%),
+        var(--bg-primary);
+    }
+    .footer-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer-cta p {
+      color: var(--text-muted);
+      font-size: 17px;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 0;
+      text-align: center;
+      background: var(--bg-primary);
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    footer p { font-size: 13px; color: var(--text-muted); }
+
+    /* ── ORDER BUMP POPUP ── */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+      z-index: 9000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .popup-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .popup-box {
+      background: #0f0f18;
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      max-width: 420px;
+      width: 100%;
+      padding: 32px 24px 24px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 60px rgba(245,200,66,0.2), 0 0 120px rgba(245,200,66,0.06);
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    .popup-overlay.show .popup-box {
+      transform: scale(1);
+    }
+    .popup-close {
+      position: absolute;
+      top: 12px; right: 16px;
+      background: none; border: none;
+      color: var(--text-muted);
+      font-size: 20px; cursor: pointer;
+      line-height: 1;
+    }
+    .popup-close:hover { color: var(--white); }
+    .popup-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #ff6b35, var(--red));
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      animation: pulse-red 2s infinite;
+    }
+    .popup-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 6vw, 36px);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .popup-title span { color: var(--gold); }
+    .popup-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .popup-bonus-list {
+      list-style: none;
+      background: rgba(245,200,66,0.05);
+      border: 1px solid rgba(245,200,66,0.15);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .popup-bonus-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text);
+      padding: 5px 0;
+    }
+    .popup-bonus-list li i { color: var(--gold); font-size: 12px; flex-shrink: 0; }
+    .popup-price-wrap {
+      margin-bottom: 20px;
+    }
+    .popup-price-old {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .popup-price-new {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 4px;
+    }
+    .popup-price-new .cur { font-size: 20px; font-weight: 700; color: var(--gold); margin-top: 6px; }
+    .popup-price-new .val { font-family: var(--font-display); font-size: 64px; color: var(--gold); line-height: 1; }
+    .popup-price-sub { font-size: 11px; color: var(--gold); font-weight: 700; letter-spacing: 1px; margin-top: 2px; }
+    .popup-btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 18px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 30px rgba(245,200,66,0.4);
+      animation: pulse 2.5s ease-in-out infinite;
+      margin-bottom: 14px;
+    }
+    .popup-btn-basic {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-body);
+      padding: 4px;
+    }
+    .popup-btn-basic:hover { color: var(--white); }
+
+    /* ── SALES NOTIFICATION ── */
+    .sales-notification {
+      position: fixed;
+      bottom: 24px; left: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #13131f 0%, #1a1a2e 100%);
+      backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(245,200,66,0.45);
+      border-radius: 16px;
+      padding: 14px 20px 14px 14px;
+      z-index: 9999;
+      box-shadow: 0 0 0 1px rgba(245,200,66,0.08), 0 8px 40px rgba(0,0,0,0.7), 0 0 30px rgba(245,200,66,0.12);
+      transform: translateX(calc(-100% - 40px));
+      opacity: 0;
+      transition: transform 0.45s cubic-bezier(.4,0,.2,1), opacity 0.45s;
+      max-width: 310px;
+    }
+    .sales-notification.show { transform: translateX(0); opacity: 1; }
+    .notif-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(245,200,66,0.35);
+    }
+    .notif-badge {
+      display: inline-block;
+      background: #22c55e;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 50px;
+      margin-bottom: 3px;
+    }
+    .notif-name { font-weight: 800; font-size: 14px; color: var(--white); line-height: 1.2; }
+    .notif-location { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+    .notif-action { font-size: 12px; color: var(--gold); font-weight: 700; margin-top: 3px; }
+
+    /* ── VSL ── */
+    .vsl-wrapper {
+      margin: 28px auto 32px;
+      max-width: 480px;
+      width: 100%;
+    }
+    .vsl-placeholder {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(245,200,66,0.25);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .vsl-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(245,200,66,0.06) 0%, transparent 70%);
+    }
+    .vsl-placeholder:hover { border-color: rgba(245,200,66,0.5); }
+    .vsl-placeholder i {
+      font-size: 52px;
+      color: var(--gold);
+      filter: drop-shadow(0 0 16px rgba(245,200,66,0.4));
+    }
+    .vsl-placeholder span {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    /* Para incorporar vídeo real, substitua .vsl-placeholder por iframe/video */
+
+    /* ── MOBILE FIRST — base é mobile, escala para cima ── */
+
+    /* Container */
+    .container { padding: 0 16px; }
+
+    /* Hero */
+    .hero { padding: 90px 0 56px; }
+    .hero-subtitle { font-size: 15px; }
+    .btn { padding: 14px 28px; font-size: 14px; }
+    .btn-large { padding: 16px 32px; font-size: 16px; }
+
+    /* Grids — mobile: 1 coluna */
+    .numbers-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .features-grid { grid-template-columns: 1fr; }
+    .num-val { font-size: 42px; }
+
+    /* Cards */
+    .player-card { width: 150px; }
+    .pricing-card { padding: 28px 16px; }
+
+    /* Notificação de venda */
+    .sales-notification { left: 12px; right: 12px; max-width: none; }
+
+    /* Tablet → 2 colunas em features */
+    @media (min-width: 640px) {
+      .container { padding: 0 20px; }
+      .hero { padding: 110px 0 72px; }
+      .hero-subtitle { font-size: 17px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .player-card { width: 180px; }
+      .btn { padding: 16px 36px; font-size: 16px; }
+      .btn-large { padding: 20px 48px; font-size: 18px; }
+      .num-val { font-size: 56px; }
+      .pricing-card { padding: 40px 32px; }
+      .sales-notification { left: 24px; right: auto; max-width: 320px; }
+    }
+
+    /* Desktop → layout completo */
+    @media (min-width: 960px) {
+      .hero { padding: 120px 0 80px; }
+      .hero-subtitle { font-size: 18px; }
+      .numbers-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+      .player-card { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── TICKER ── -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-inner">
+        🏆 980 figurinhas da Copa 2026 por apenas R$10 <span class="ticker-sep">•</span>
+        Alta resolução 300 DPI — imprima em casa ou na gráfica <span class="ticker-sep">•</span>
+        Organizadas por seleção — fácil de usar <span class="ticker-sep">•</span>
+        Download imediato após o pagamento <span class="ticker-sep">•</span>
+        Garantia de 7 dias ou seu dinheiro de volta <span class="ticker-sep">•</span>
+        🏆 980 figurinhas da Copa 2026 por apenas R$10 <span class="ticker-sep">•</span>
+        Alta resolução 300 DPI — imprima em casa ou na gráfica <span class="ticker-sep">•</span>
+        Organizadas por seleção — fácil de usar <span class="ticker-sep">•</span>
+        Download imediato após o pagamento <span class="ticker-sep">•</span>
+        Garantia de 7 dias ou seu dinheiro de volta <span class="ticker-sep">•</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <p class="badge-gold">🏆 COPA DO MUNDO 2026 — OFERTA EXCLUSIVA</p>
+      <h1>
+        <span class="text-white">PARE DE GASTAR COM</span><br>
+        <span class="text-gold glow-text">PACOTINHOS REPETIDOS</span>
+      </h1>
+      <p class="hero-subtitle">
+        Não conte com a sorte — todas as 980 figurinhas da Copa 2026 prontas para imprimir.
+        Chega de figurinhas repetidas, complete hoje mesmo seu álbum.
+      </p>
+
+      <div class="vsl-wrapper">
+        <div class="vsl-placeholder">
+          <i class="fas fa-play-circle"></i>
+          <span>Assista antes de comprar</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#comprar" class="btn btn-primary btn-large pulse-anim">
+          <i class="fas fa-bolt"></i> COMPLETAR MEU ÁLBUM AGORA
+        </a>
+        <br>
+        <span class="hero-urgency">
+          <i class="fas fa-fire"></i> Desconto de 65% — termina quando o cronômetro zerar
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CARROSSEL DE FIGURINHAS ── -->
+  <section class="album-section">
+    <div class="container">
+      <h2>TODOS OS <span class="text-gold">CRAQUES DO MUNDO</span></h2>
+      <p class="section-sub">Todas as figurinhas organizadas por seleções — prontas para imprimir e completar seu álbum.</p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Cards gerados pelo JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NÚMEROS ── -->
+  <section class="numbers-section">
+    <div class="container">
+      <h2>ECONOMIZE <span class="text-gold">DE VERDADE</span></h2>
+      <p class="section-sub" style="margin-top:12px;">Quem compra pacotinho gasta R$300, R$400 e ainda fica com espaços vazios.</p>
+      <div class="numbers-grid">
+        <div class="num-card">
+          <div class="num-val">980</div>
+          <div class="num-label">Figurinhas incluídas</div>
+          <div class="num-desc">Organizadas por seleção, prontas para imprimir</div>
+        </div>
+        <div class="num-card">
+          <div class="num-val">48</div>
+          <div class="num-label">Seleções completas</div>
+          <div class="num-desc">Todos os países da Copa 2026</div>
+        </div>
+        <div class="num-card">
+          <div class="num-val">R$0</div>
+          <div class="num-label">Em repetidas</div>
+          <div class="num-desc">Nenhuma figurinha duplicada no pack</div>
+        </div>
+        <div class="num-card">
+          <div class="num-val">300</div>
+          <div class="num-label">DPI de resolução</div>
+          <div class="num-desc">Qualidade profissional para imprimir</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features-section">
+    <div class="container">
+      <h2>BAIXOU, IMPRIMIU, <span class="text-gold">COMPLETOU.</span></h2>
+      <p class="section-sub">Sem depender de envelopes, sorte ou trocas. Tudo o que você precisa para completar o álbum, de uma vez só.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-piggy-bank"></i></div>
+          <div class="feature-title">Economize de Verdade</div>
+          <div class="feature-desc">Enquanto envelopes custam R$150+ e ainda vêm repetidas, aqui você paga uma vez e recebe tudo organizado.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-print"></i></div>
+          <div class="feature-title">Pronto para Imprimir</div>
+          <div class="feature-desc">Arquivos em alta resolução (300 DPI), prontos para impressão em papel comum, fotográfico ou adesivo.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-globe"></i></div>
+          <div class="feature-title">Todas as 48 Seleções</div>
+          <div class="feature-desc">Brasil, Argentina, França, Espanha, Portugal e todos os demais países classificados para a Copa 2026.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-folder-open"></i></div>
+          <div class="feature-title">Tudo Organizado</div>
+          <div class="feature-desc">Figurinhas separadas por seleção, numeradas e prontas para usar. Sem bagunça, sem confusão.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+          <div class="feature-title">Download Imediato</div>
+          <div class="feature-desc">Pagou, baixou. Sem esperar entrega, sem fila, sem envelopes chegando dias depois.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+          <div class="feature-title">Atualizações Inclusas</div>
+          <div class="feature-desc">Novas figurinhas adicionadas conforme o torneio avança. Comprou uma vez, tem para sempre.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEPOIMENTOS ── -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <h2>+ DE 1.200 <span class="text-gold">ÁLBUNS COMPLETOS</span> COM NOSSO PACK.</h2>
+        <div class="testimonials-rating">
+          <div class="rating-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="rating-label">avaliação média</span>
+        </div>
+      </div>
+      <div class="ig-comments-wrapper">
+
+        <!-- Comentário 1 -->
+        <div class="ig-comment">
+          <div class="ig-avatar">
+            <div class="ig-avatar-inner"><img src="avatares/marcos.png" alt="marcos"></div>
+          </div>
+          <div class="ig-comment-body">
+            <div class="ig-comment-header">
+              <span class="ig-username">marcos_colecionador</span>
+              <span class="ig-time">2 d</span>
+            </div>
+            <p class="ig-text">Comprei às 22h e meia-noite meu filho tinha colado a última figurinha. Álbum completo em menos de 2 horas. Tinha gastado R$180 em pacotinhos antes disso e ainda tava longe de completar 🏆🏆</p>
+            <div class="ig-comment-meta">
+              <span class="ig-reply">Responder</span>
+              <span class="ig-enviar">Enviar</span>
+            </div>
+          </div>
+          <div class="ig-heart">
+            <i class="fas fa-heart liked"></i>
+            <span>248</span>
+          </div>
+        </div>
+
+        <!-- Comentário 2 -->
+        <div class="ig-comment">
+          <div class="ig-avatar">
+            <div class="ig-avatar-inner"><img src="avatares/ana.png" alt="ana"></div>
+          </div>
+          <div class="ig-comment-body">
+            <div class="ig-comment-header">
+              <span class="ig-username">ana_ferreira12</span>
+              <span class="ig-time">4 d</span>
+            </div>
+            <p class="ig-text">Minha filha ficou frustrada porque só vinham repetidas. Por R$10,00 veio tudo de uma vez, organizado, sem repetição. Não tem comparação. 😄</p>
+            <div class="ig-comment-meta">
+              <span class="ig-reply">Responder</span>
+              <span class="ig-enviar">Enviar</span>
+            </div>
+          </div>
+          <div class="ig-heart">
+            <i class="fas fa-heart liked"></i>
+            <span>183</span>
+          </div>
+        </div>
+
+        <!-- Comentário 3 -->
+        <div class="ig-comment">
+          <div class="ig-avatar">
+            <div class="ig-avatar-inner"><img src="avatares/roberto.png" alt="roberto"></div>
+          </div>
+          <div class="ig-comment-body">
+            <div class="ig-comment-header">
+              <span class="ig-username">roberto.silva99</span>
+              <span class="ig-time">1 sem</span>
+            </div>
+            <p class="ig-text">Baixei, mandei imprimir na gráfica aqui perto e saiu perfeito. Meu neto ficou feliz e eu economizei muito. Recomendo para todo mundo! ⚽🏆</p>
+            <div class="ig-comment-meta">
+              <span class="ig-reply">Responder</span>
+              <span class="ig-enviar">Enviar</span>
+            </div>
+          </div>
+          <div class="ig-heart">
+            <i class="far fa-heart"></i>
+            <span>97</span>
+          </div>
+        </div>
+
+        <!-- Comentário 4 -->
+        <div class="ig-comment">
+          <div class="ig-avatar">
+            <div class="ig-avatar-inner"><img src="avatares/ju.png" alt="ju"></div>
+          </div>
+          <div class="ig-comment-body">
+            <div class="ig-comment-header">
+              <span class="ig-username">ju_sports2026</span>
+              <span class="ig-time">2 sem</span>
+            </div>
+            <p class="ig-text">Comprei 3 — um pra mim, um pro meu irmão e um de presente pro meu pai que é louco por Copa. Os três completaram no mesmo dia. Presente perfeito e barato 🔥🔥</p>
+            <div class="ig-comment-meta">
+              <span class="ig-reply">Responder</span>
+              <span class="ig-enviar">Enviar</span>
+            </div>
+          </div>
+          <div class="ig-heart">
+            <i class="fas fa-heart liked"></i>
+            <span>312</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="price-section" id="comprar">
+    <div class="container">
+      <h2>ESCOLHA SEU <span class="text-gold">PACK</span></h2>
+      <p class="section-sub">Todos com download imediato e garantia de 7 dias</p>
+
+      <div class="pricing-grid">
+
+        <!-- ── CARD BÁSICO ── -->
+        <div class="pricing-card pricing-card--basic">
+          <div class="plan-label">PACK BÁSICO</div>
+          <h3 class="plan-name">Copa 2026</h3>
+          <p class="plan-desc">O álbum completo da Copa do Mundo 2026 para imprimir.</p>
+
+          <div class="countdown-wrap">
+            <div class="countdown-block countdown-block--basic">
+              <span class="countdown-num cd-h">00</span>
+              <span class="countdown-label">horas</span>
+            </div>
+            <span class="countdown-sep" style="color:#9e9e9e">:</span>
+            <div class="countdown-block countdown-block--basic">
+              <span class="countdown-num cd-m">00</span>
+              <span class="countdown-label">min</span>
+            </div>
+            <span class="countdown-sep" style="color:#9e9e9e">:</span>
+            <div class="countdown-block countdown-block--basic">
+              <span class="countdown-num cd-s">00</span>
+              <span class="countdown-label">seg</span>
+            </div>
+          </div>
+
+          <p class="price-original">De R$ 29,90</p>
+          <div class="price-current">
+            <span class="price-currency">R$</span>
+            <span class="price-value">10</span>
+          </div>
+          <p class="price-info">65% OFF · download imediato</p>
+
+          <ul class="price-features">
+            <li><i class="fas fa-check-circle"></i> 980 figurinhas Copa 2026</li>
+            <li><i class="fas fa-check-circle"></i> Organizadas por seleção</li>
+            <li><i class="fas fa-check-circle"></i> Alta resolução 300 DPI</li>
+            <li><i class="fas fa-check-circle"></i> Impressora comum ou gráfica</li>
+            <li><i class="fas fa-check-circle"></i> 48 seleções completas</li>
+          </ul>
+
+          <button onclick="openUpsellPopup()" class="btn btn-secondary-basic" style="width:100%;display:flex;justify-content:center;">
+            COMPRAR PACK BÁSICO — R$10
+          </button>
+          <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px;">Acesso imediato via e-mail</p>
+        </div>
+
+        <!-- ── CARD PREMIUM ── -->
+        <div class="pricing-card pricing-card--premium">
+          <div class="premium-top-badge">🏆 OFERTA COMPLETA</div>
+          <div class="plan-label plan-label--premium">PACK PREMIUM</div>
+          <h3 class="plan-name plan-name--premium">Copa 2026 + Bônus</h3>
+          <p class="plan-desc" style="color:var(--text)">Três álbuns históricos da Copa do Mundo para imprimir e colecionar.</p>
+
+          <div class="countdown-wrap">
+            <div class="countdown-block">
+              <span class="countdown-num cd-h">00</span>
+              <span class="countdown-label">horas</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-block">
+              <span class="countdown-num cd-m">00</span>
+              <span class="countdown-label">min</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-block">
+              <span class="countdown-num cd-s">00</span>
+              <span class="countdown-label">seg</span>
+            </div>
+          </div>
+
+          <p class="price-original">De R$ 49,90</p>
+          <div class="price-current">
+            <span class="price-currency" style="color:var(--gold)">R$</span>
+            <span class="price-value" style="color:var(--gold)">19</span>
+            <span class="price-cents" style="color:var(--gold)">,99</span>
+          </div>
+          <p class="price-info" style="color:var(--gold);font-weight:700;">60% OFF · TUDO INCLUSO</p>
+
+          <ul class="price-features">
+            <li><i class="fas fa-check-circle"></i> 980 figurinhas Copa 2026</li>
+            <li><i class="fas fa-check-circle"></i> Organizadas por seleção</li>
+            <li><i class="fas fa-check-circle"></i> Alta resolução 300 DPI</li>
+            <li><i class="fas fa-check-circle"></i> Impressora comum ou gráfica</li>
+            <li><i class="fas fa-check-circle"></i> 48 seleções completas</li>
+            <li class="bonus-item"><i class="fas fa-gift" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Álbum Copa 2022 — Qatar completo</li>
+            <li class="bonus-item"><i class="fas fa-gift" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Álbum Copa 2018 — Rússia completo</li>
+          </ul>
+
+          <a href="https://pay.kiwify.com.br/SEU-LINK-PREMIUM" class="btn btn-primary btn-large pulse-anim" style="width:100%;display:flex;justify-content:center;">
+            <i class="fas fa-bolt"></i> QUERO O PACK PREMIUM — R$19,99
+          </a>
+          <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px;">Acesso imediato via e-mail</p>
+
+          <div class="trust-badges" style="margin-top:16px;">
+            <div class="trust-item"><i class="fas fa-lock"></i> Pagamento seguro</div>
+            <div class="trust-item"><i class="fas fa-shield-alt"></i> Garantia 7 dias</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>DÚVIDAS <span class="text-gold" style="color:var(--neon)">FREQUENTES</span></h2>
+      <p class="faq-subtitle">Tudo que você precisa saber antes de comprar.</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Preciso de uma impressora especial?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Não. Qualquer impressora jato de tinta ou laser já funciona bem. Você também pode levar o arquivo em um pen drive e imprimir numa gráfica por poucos reais.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como recebo o pack depois do pagamento?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Imediatamente após a confirmação do pagamento você recebe um link por e-mail para baixar todas as figurinhas. O processo é automático — não depende de aprovação manual.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            As figurinhas têm o tamanho certo para colar no álbum?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Sim. As figurinhas estão no tamanho oficial do álbum da Copa 2026. Basta imprimir, recortar e colar — encaixam perfeitamente em cada espaço.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            E se sair uma figurinha nova durante a Copa?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Você recebe atualização sem custo adicional. Novas figurinhas adicionadas conforme o torneio avança são incluídas automaticamente no seu acesso.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Tem garantia se eu não gostar?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Sim. Garantia incondicional de 7 dias. Se por qualquer motivo não ficar satisfeito, devolvemos 100% do valor pago sem perguntas.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER CTA ── -->
+  <section class="footer-cta">
+    <div class="container">
+      <h2>ENQUANTO O PREÇO <span class="text-gold">AINDA É ESSE</span></h2>
+      <p>980 figurinhas em 300 DPI, organizadas por seleção, por R$10. Quando o cronômetro zerar o desconto some.</p>
+      <a href="#comprar" class="btn btn-primary btn-large pulse-anim">
+        <i class="fas fa-bolt"></i> QUERO O ÁLBUM COMPLETO AGORA
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Pack Figurinhas Copa 2026 · Todos os direitos reservados</p>
+      <p style="margin-top:6px;">Este produto é de natureza digital e educativa.</p>
+    </div>
+  </footer>
+
+  <!-- ── ORDER BUMP POPUP ── -->
+  <div class="popup-overlay" id="upsellPopup" onclick="handleOverlayClick(event)">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closeUpsellPopup()"><i class="fas fa-times"></i></button>
+
+      <div class="popup-eyebrow"><i class="fas fa-bolt"></i> OFERTA ESPECIAL POR TEMPO LIMITADO</div>
+
+      <h2 class="popup-title">LEVE OS 3 ÁLBUNS<br><span>POR APENAS R$15</span></h2>
+      <p class="popup-sub">Você está a um passo de completar sua coleção. Aproveite e leve também os álbuns das copas anteriores com desconto exclusivo.</p>
+
+      <ul class="popup-bonus-list">
+        <li><i class="fas fa-check-circle"></i> Pack Copa 2026 — 980 figurinhas (48 seleções)</li>
+        <li><i class="fas fa-check-circle"></i> <strong>BÔNUS:</strong> Álbum completo Copa 2022 Qatar</li>
+        <li><i class="fas fa-check-circle"></i> <strong>BÔNUS:</strong> Álbum completo Copa 2018 Rússia</li>
+        <li><i class="fas fa-check-circle"></i> Alta resolução 300 DPI — imprime em casa ou gráfica</li>
+      </ul>
+
+      <div class="popup-price-wrap">
+        <p class="popup-price-old">De R$47,90</p>
+        <div class="popup-price-new">
+          <span class="cur">R$</span>
+          <span class="val">15</span>
+        </div>
+        <p class="popup-price-sub">PAGAMENTO ÚNICO • ACESSO IMEDIATO</p>
+      </div>
+
+      <a href="https://pay.kiwify.com.br/SEU-LINK-PREMIUM" class="popup-btn-primary">
+        <i class="fas fa-bolt"></i> GARANTIR PROMOÇÃO — R$15
+      </a>
+
+      <button class="popup-btn-basic" onclick="goBasic()">não, quero apenas o pack básico por R$10</button>
+    </div>
+  </div>
+
+  <!-- ── SALES NOTIFICATION ── -->
+  <div class="sales-notification" id="salesNotif">
+    <div class="notif-icon">🏆</div>
+    <div>
+      <div class="notif-badge">✔ compra confirmada</div>
+      <div class="notif-name" id="notifName">Carlos</div>
+      <div class="notif-location" id="notifLocation">São Paulo, SP</div>
+      <div class="notif-action">acabou de garantir o Pack Copa 2026</div>
+    </div>
+  </div>
+
+  <script>
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const icon   = btn.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.classList.add('open');
+        }
+      });
+    });
+
+    // ── Carrossel — imagens reais das figurinhas ──
+    const totalImgs = 36;
+    const imgOrder  = Array.from({length: totalImgs}, (_, i) => i + 1)
+                        .sort(() => Math.random() - 0.5); // ordem aleatória
+    const track = document.getElementById('carouselTrack');
+    // Triplicar para loop infinito suave
+    [...imgOrder, ...imgOrder, ...imgOrder].forEach(n => {
+      track.innerHTML += `
+        <div class="player-card">
+          <div class="card-inner">
+            <img src="figurinhas/Screenshot_${n}.png" alt="Figurinha ${n}" loading="lazy">
+          </div>
+        </div>`;
+    });
+
+    // ── Countdown Timer — 5h regressivo, reseta ao zerar, sincroniza ambos os cards ──
+    function openUpsellPopup() {
+      document.getElementById('upsellPopup').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeUpsellPopup() {
+      document.getElementById('upsellPopup').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('upsellPopup')) closeUpsellPopup();
+    }
+    function goBasic() {
+      closeUpsellPopup();
+      window.location.href = 'https://pay.kiwify.com.br/SEU-LINK-AQUI';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeUpsellPopup();
+    });
+
+    function startCountdown() {
+      const DURATION = 5 * 60 * 60 * 1000;
+      const key = 'copa_cd_end';
+      let end = parseInt(localStorage.getItem(key) || '0');
+      const now = Date.now();
+      if (!end || end < now) {
+        end = now + DURATION;
+        localStorage.setItem(key, end);
+      }
+      function tick() {
+        if (end - Date.now() <= 0) {
+          end = Date.now() + DURATION;
+          localStorage.setItem(key, end);
+        }
+        const remaining = Math.max(0, end - Date.now());
+        const h = String(Math.floor(remaining / 3600000)).padStart(2,'0');
+        const m = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,'0');
+        const s = String(Math.floor((remaining % 60000) / 1000)).padStart(2,'0');
+        document.querySelectorAll('.cd-h').forEach(el => el.textContent = h);
+        document.querySelectorAll('.cd-m').forEach(el => el.textContent = m);
+        document.querySelectorAll('.cd-s').forEach(el => el.textContent = s);
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+    startCountdown();
+
+    // ── Sales Notification ──
+    const buyers = [
+      { name: 'Carlos', city: 'São Paulo, SP' },
+      { name: 'Fernanda', city: 'Rio de Janeiro, RJ' },
+      { name: 'Lucas', city: 'Belo Horizonte, MG' },
+      { name: 'Amanda', city: 'Curitiba, PR' },
+      { name: 'Pedro', city: 'Porto Alegre, RS' },
+      { name: 'Juliana', city: 'Salvador, BA' },
+      { name: 'Matheus', city: 'Fortaleza, CE' },
+      { name: 'Camila', city: 'Recife, PE' },
+      { name: 'Rafael', city: 'Manaus, AM' },
+      { name: 'Larissa', city: 'Brasília, DF' },
+      { name: 'Thiago', city: 'Goiânia, GO' },
+      { name: 'Bianca', city: 'Florianópolis, SC' },
+      { name: 'Felipe', city: 'Natal, RN' },
+      { name: 'Mariana', city: 'Belém, PA' },
+      { name: 'Diego', city: 'Maceió, AL' },
+    ];
+    // embaralha a lista para que a ordem seja aleatória e nunca repita na mesma sequência
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+    let queue = shuffle(buyers);
+    let qi = 0;
+    const notif = document.getElementById('salesNotif');
+    function showNotif() {
+      if (qi >= queue.length) { queue = shuffle(buyers); qi = 0; }
+      const b = queue[qi++];
+      document.getElementById('notifName').textContent = b.name;
+      document.getElementById('notifLocation').textContent = b.city;
+      notif.classList.add('show');
+      setTimeout(() => notif.classList.remove('show'), 3500);
+    }
+    setTimeout(() => { showNotif(); setInterval(showNotif, 5000); }, 4000);
+  </script>
+</body>
+</html>
