@@ -1647,11 +1647,9 @@
     // ── Countdown Timer — 5h regressivo, reseta ao zerar, sincroniza ambos os cards ──
     function openUpsellPopup() {
       document.getElementById('upsellPopup').classList.add('show');
-      document.body.style.overflow = 'hidden';
     }
     function closeUpsellPopup() {
       document.getElementById('upsellPopup').classList.remove('show');
-      document.body.style.overflow = '';
     }
     function handleOverlayClick(e) {
       if (e.target === document.getElementById('upsellPopup')) closeUpsellPopup();
