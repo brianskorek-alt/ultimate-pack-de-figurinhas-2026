@@ -1566,7 +1566,6 @@
 
   <!-- ── ORDER BUMP POPUP ── -->
   <div class="popup-overlay" id="upsellPopup">
-    <div class="popup-backdrop" onclick="closeUpsellPopup()"></div>
     <div class="popup-box">
       <button class="popup-close" onclick="closeUpsellPopup()"><i class="fas fa-times"></i></button>
 
@@ -1595,7 +1594,7 @@
         <i class="fas fa-bolt"></i> GARANTIR PROMOÇÃO — R$15
       </a>
 
-      <button class="popup-btn-basic" id="btnBasico">não, quero apenas o pack básico por R$10</button>
+      <a href="https://kiwify.app/f2upXEi" class="popup-btn-basic" style="display:block;">não, quero apenas o pack básico por R$10</a>
     </div>
   </div>
 
@@ -1653,12 +1652,6 @@
     function handleOverlayClick(e) {
       if (e.target === document.getElementById('upsellPopup')) closeUpsellPopup();
     }
-    document.getElementById('btnBasico').addEventListener('click', function(e) {
-      e.stopImmediatePropagation();
-      e.stopPropagation();
-      window.location.href = 'https://kiwify.app/f2upXEi';
-    });
-
     function goBasic() {
       window.location.href = 'https://kiwify.app/f2upXEi';
     }
