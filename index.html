@@ -572,33 +572,35 @@
       align-items: start;
     }
 
-    /* Mobile: compacta os cards para caber lado a lado */
+    /* Mobile: compacta os cards para caber na tela inteira lado a lado */
     @media (max-width: 639px) {
-      .pricing-grid { gap: 6px; }
-      .pricing-card { padding: 12px 7px; }
-      .plan-name { font-size: 14px; }
-      .plan-name--premium { font-size: 15px; }
-      .plan-desc { font-size: 10px; line-height: 1.3; }
-      .plan-label { font-size: 8px; letter-spacing: 0.5px; padding: 3px 8px; }
-      .price-value { font-size: 38px; }
-      .price-currency, .price-cents { font-size: 13px; }
-      .price-original { font-size: 10px; }
-      .price-info { font-size: 9px; }
-      .price-features li { font-size: 10px; padding: 5px 0; gap: 5px; }
-      .price-features li i { font-size: 10px; }
-      .bonus-item { padding: 5px 6px !important; font-size: 10px; }
-      .bonus-item .bonus-label { font-size: 8px; }
-      .btn-secondary-basic { font-size: 9px; padding: 9px 6px; }
-      .btn-large { font-size: 10px; padding: 11px 8px; }
-      .countdown-wrap { gap: 3px; margin: 8px 0 10px; }
-      .countdown-block { padding: 5px 4px; border-radius: 6px; }
-      .countdown-num { font-size: 18px; }
-      .countdown-block--basic .countdown-num { font-size: 16px; }
-      .countdown-label { font-size: 7px; letter-spacing: 0; }
-      .countdown-sep { font-size: 14px; }
-      .premium-top-badge { font-size: 8px; padding: 3px 8px; }
-      .trust-badges { gap: 6px; }
-      .trust-item { font-size: 9px; }
+      .pricing-grid { gap: 6px; margin-top: 20px; }
+      .pricing-card { padding: 10px 6px 12px; }
+      .plan-name { font-size: 12px; margin: 4px 0 2px; }
+      .plan-name--premium { font-size: 13px; }
+      .plan-desc { font-size: 9px; line-height: 1.3; margin-bottom: 0; }
+      .plan-label { font-size: 7px; letter-spacing: 0.5px; padding: 2px 6px; margin-bottom: 2px; }
+      .price-value { font-size: 32px; }
+      .price-currency, .price-cents { font-size: 11px; }
+      .price-original { font-size: 9px; margin-bottom: 0; }
+      .price-info { font-size: 8px; margin-bottom: 6px; }
+      .price-current { margin: 2px 0; }
+      .price-features { margin: 6px 0; }
+      .price-features li { font-size: 9px; padding: 3px 0; gap: 4px; }
+      .price-features li i { font-size: 9px; }
+      .bonus-item { padding: 3px 4px !important; font-size: 9px; margin-top: 3px; }
+      .btn-secondary-basic { font-size: 8px; padding: 8px 5px; }
+      .btn-large { font-size: 9px; padding: 10px 6px; }
+      .countdown-wrap { gap: 3px; margin: 6px 0 8px; }
+      .countdown-block { padding: 4px 3px; border-radius: 5px; }
+      .countdown-num { font-size: 16px; }
+      .countdown-block--basic .countdown-num { font-size: 14px; }
+      .countdown-label { font-size: 6px; letter-spacing: 0; }
+      .countdown-sep { font-size: 12px; }
+      .premium-top-badge { font-size: 7px; padding: 2px 6px; }
+      .trust-badges { gap: 4px; margin-top: 8px !important; }
+      .trust-item { font-size: 8px; }
+      [style*="font-size:12px"][style*="margin-top:10px"] { font-size: 8px !important; margin-top: 4px !important; }
     }
 
     /* Card base */
@@ -610,13 +612,13 @@
       overflow: hidden;
     }
 
-    /* Básico — apagado, sem destaque */
+    /* Básico — disponível mas sem destaque */
     .pricing-card--basic {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      opacity: 0.75;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.15);
+      opacity: 1;
     }
-    .pricing-card--basic .price-features li { color: var(--text-muted); }
+    .pricing-card--basic .price-features li { color: var(--text); }
 
     /* Premium — destaque total */
     .pricing-card--premium {
@@ -1428,8 +1430,9 @@
             <li><i class="fas fa-check-circle"></i> Alta resolução 300 DPI</li>
             <li><i class="fas fa-check-circle"></i> Impressora comum ou gráfica</li>
             <li><i class="fas fa-check-circle"></i> 48 seleções completas</li>
-            <li class="bonus-item"><i class="fas fa-gift" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Álbum Copa 2022 — Qatar completo</li>
-            <li class="bonus-item"><i class="fas fa-gift" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Álbum Copa 2018 — Rússia completo</li>
+            <li class="bonus-item"><i class="fas fa-gift" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Copa 2022 Qatar completo</li>
+            <li class="bonus-item"><i class="fas fa-gift" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Copa 2018 Rússia completo</li>
+            <li class="bonus-item"><i class="fas fa-star" style="color:var(--gold)"></i> <strong>BÔNUS:</strong> Figurinhas especiais Neymar 2026</li>
           </ul>
 
           <a href="https://pay.kiwify.com.br/SEU-LINK-PREMIUM" class="btn btn-primary btn-large pulse-anim" style="width:100%;display:flex;justify-content:center;">
