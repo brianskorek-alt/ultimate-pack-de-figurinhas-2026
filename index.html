@@ -1085,8 +1085,19 @@
     .player-card { width: 150px; }
     .pricing-card { padding: 28px 16px; }
 
-    /* Notificação de venda */
-    .sales-notification { left: 12px; right: 12px; max-width: none; }
+    /* Notificação de venda — menor no mobile */
+    .sales-notification {
+      left: 10px; right: 10px; max-width: none;
+      padding: 8px 12px 8px 10px;
+      gap: 8px;
+      border-radius: 10px;
+      bottom: 12px;
+    }
+    .notif-icon { width: 32px; height: 32px; font-size: 15px; border-radius: 8px; }
+    .notif-badge { font-size: 8px; padding: 1px 5px; margin-bottom: 1px; }
+    .notif-name { font-size: 12px; }
+    .notif-location { font-size: 10px; }
+    .notif-action { font-size: 10px; margin-top: 1px; }
 
     /* Tablet → 2 colunas em features */
     @media (min-width: 640px) {
@@ -1554,7 +1565,7 @@
 
       <div class="popup-eyebrow"><i class="fas fa-bolt"></i> OFERTA ESPECIAL POR TEMPO LIMITADO</div>
 
-      <h2 class="popup-title">LEVE OS 3 ÁLBUNS<br><span>POR APENAS R$15</span></h2>
+      <h2 class="popup-title">ESPERE! COM MAIS R$5<br><span>VOCÊ LEVA O KIT PREMIUM</span></h2>
       <p class="popup-sub">Você está a um passo de completar sua coleção. Aproveite e leve também os álbuns das copas anteriores com desconto exclusivo.</p>
 
       <ul class="popup-bonus-list">
