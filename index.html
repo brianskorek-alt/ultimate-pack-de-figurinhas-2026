@@ -590,12 +590,12 @@
       .bonus-item .bonus-label { font-size: 8px; }
       .btn-secondary-basic { font-size: 9px; padding: 9px 6px; }
       .btn-large { font-size: 10px; padding: 11px 8px; }
-      .countdown-wrap { gap: 2px; }
-      .countdown-block { padding: 4px 5px; min-width: 28px; }
-      .countdown-num { font-size: 15px; }
-      .countdown-block--basic .countdown-num { font-size: 14px; }
-      .countdown-label { font-size: 7px; }
-      .countdown-sep { font-size: 14px; padding-top: 4px; }
+      .countdown-wrap { gap: 3px; margin: 8px 0 10px; }
+      .countdown-block { padding: 5px 4px; border-radius: 6px; }
+      .countdown-num { font-size: 18px; }
+      .countdown-block--basic .countdown-num { font-size: 16px; }
+      .countdown-label { font-size: 7px; letter-spacing: 0; }
+      .countdown-sep { font-size: 14px; }
       .premium-top-badge { font-size: 8px; padding: 3px 8px; }
       .trust-badges { gap: 6px; }
       .trust-item { font-size: 9px; }
@@ -702,8 +702,11 @@
     .countdown-wrap {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin: 16px 0 24px;
+      align-items: center;
+      gap: 4px;
+      margin: 12px 0 16px;
+      width: 100%;
+      overflow: hidden;
     }
     .countdown-block {
       display: flex;
@@ -711,13 +714,14 @@
       align-items: center;
       background: rgba(255,48,64,0.08);
       border: 1px solid rgba(255,48,64,0.2);
-      border-radius: 10px;
-      padding: 10px 16px;
-      min-width: 60px;
+      border-radius: 8px;
+      padding: 8px 6px;
+      min-width: 0;
+      flex: 1;
     }
-    .countdown-num { font-family: var(--font-display); font-size: 32px; color: var(--red); line-height: 1; }
-    .countdown-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
-    .countdown-sep { font-family: var(--font-display); font-size: 28px; color: var(--red); align-self: flex-start; padding-top: 10px; }
+    .countdown-num { font-family: var(--font-display); font-size: 28px; color: var(--red); line-height: 1; }
+    .countdown-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+    .countdown-sep { font-family: var(--font-display); font-size: 20px; color: var(--red); align-self: center; flex-shrink: 0; padding-top: 0; }
 
     /* ── FAQ ── */
     .faq-section { padding: 80px 0; background: var(--bg-primary); }
