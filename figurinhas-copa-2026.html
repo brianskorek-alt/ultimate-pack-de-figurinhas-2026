@@ -843,6 +843,12 @@
       opacity: 1;
       pointer-events: all;
     }
+    .popup-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .popup-box { position: relative; z-index: 1; }
     .popup-box {
       background: #0f0f18;
       border: 2px solid var(--gold);
@@ -1559,7 +1565,8 @@
   </footer>
 
   <!-- ── ORDER BUMP POPUP ── -->
-  <div class="popup-overlay" id="upsellPopup" onclick="handleOverlayClick(event)">
+  <div class="popup-overlay" id="upsellPopup">
+    <div class="popup-backdrop" onclick="closeUpsellPopup()"></div>
     <div class="popup-box">
       <button class="popup-close" onclick="closeUpsellPopup()"><i class="fas fa-times"></i></button>
 
@@ -1588,8 +1595,9 @@
         <i class="fas fa-bolt"></i> GARANTIR PROMOÇÃO — R$15
       </a>
 
-      <button class="popup-btn-basic" onclick="event.stopPropagation();window.open('https://kiwify.app/f2upXEi','_blank')">não, quero apenas o pack básico por R$10</button>
+      <a href="https://kiwify.app/f2upXEi" class="popup-btn-basic" style="display:block;text-decoration:underline;text-underline-offset:3px;">não, quero apenas o pack básico por R$10</a>
     </div>
+  </div>
   </div>
 
   <!-- ── SALES NOTIFICATION ── -->
