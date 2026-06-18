@@ -572,35 +572,57 @@
       align-items: start;
     }
 
-    /* Mobile: compacta os cards para caber na tela inteira lado a lado */
+    /* Mobile: empilhado — básico compacto em cima, premium grande embaixo */
     @media (max-width: 639px) {
-      .pricing-grid { gap: 6px; margin-top: 20px; }
-      .pricing-card { padding: 10px 6px 12px; }
-      .plan-name { font-size: 12px; margin: 4px 0 2px; }
-      .plan-name--premium { font-size: 13px; }
-      .plan-desc { font-size: 9px; line-height: 1.3; margin-bottom: 0; }
-      .plan-label { font-size: 7px; letter-spacing: 0.5px; padding: 2px 6px; margin-bottom: 2px; }
-      .price-value { font-size: 32px; }
-      .price-currency, .price-cents { font-size: 11px; }
-      .price-original { font-size: 9px; margin-bottom: 0; }
-      .price-info { font-size: 8px; margin-bottom: 6px; }
-      .price-current { margin: 2px 0; }
-      .price-features { margin: 6px 0; }
-      .price-features li { font-size: 9px; padding: 3px 0; gap: 4px; }
-      .price-features li i { font-size: 9px; }
-      .bonus-item { padding: 3px 4px !important; font-size: 9px; margin-top: 3px; }
-      .btn-secondary-basic { font-size: 8px; padding: 8px 5px; }
-      .btn-large { font-size: 9px; padding: 10px 6px; }
-      .countdown-wrap { gap: 3px; margin: 6px 0 8px; }
-      .countdown-block { padding: 4px 3px; border-radius: 5px; }
-      .countdown-num { font-size: 16px; }
-      .countdown-block--basic .countdown-num { font-size: 14px; }
-      .countdown-label { font-size: 6px; letter-spacing: 0; }
-      .countdown-sep { font-size: 12px; }
-      .premium-top-badge { font-size: 7px; padding: 2px 6px; }
-      .trust-badges { gap: 4px; margin-top: 8px !important; }
-      .trust-item { font-size: 8px; }
-      [style*="font-size:12px"][style*="margin-top:10px"] { font-size: 8px !important; margin-top: 4px !important; }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      /* CARD BÁSICO — compacto, horizontal, sem muito peso visual */
+      .pricing-card--basic {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto;
+        align-items: center;
+        gap: 0 12px;
+        padding: 14px 16px;
+        text-align: left;
+      }
+      .pricing-card--basic .plan-label { font-size: 9px; grid-column: 1 / -1; margin-bottom: 4px; }
+      .pricing-card--basic .plan-name { font-size: 16px; margin: 0; grid-column: 1; }
+      .pricing-card--basic .plan-desc { font-size: 11px; grid-column: 1; margin: 2px 0 0; }
+      .pricing-card--basic .countdown-wrap { display: none; }
+      .pricing-card--basic .price-original { font-size: 10px; margin: 0; grid-column: 2; grid-row: 2; text-align: right; }
+      .pricing-card--basic .price-current { grid-column: 2; grid-row: 3; justify-content: flex-end; margin: 0; }
+      .pricing-card--basic .price-value { font-size: 32px; }
+      .pricing-card--basic .price-currency { font-size: 13px; }
+      .pricing-card--basic .price-info { font-size: 9px; grid-column: 2; grid-row: 4; text-align: right; margin: 0; }
+      .pricing-card--basic .price-features { display: none; }
+      .pricing-card--basic button { grid-column: 1 / -1; margin-top: 10px; font-size: 11px; padding: 10px; }
+      .pricing-card--basic + p { display: none; }
+
+      /* CARD PREMIUM — tamanho cheio, destaque total */
+      .pricing-card--premium { padding: 28px 18px 20px; }
+      .plan-name--premium { font-size: 22px; }
+      .pricing-card--premium .plan-desc { font-size: 13px; }
+      .pricing-card--premium .price-value { font-size: 52px; }
+      .pricing-card--premium .price-currency,
+      .pricing-card--premium .price-cents { font-size: 18px; }
+      .pricing-card--premium .price-features li { font-size: 13px; padding: 6px 0; }
+      .pricing-card--premium .bonus-item { font-size: 12px; }
+      .btn-large { font-size: 14px; padding: 16px 12px; }
+
+      /* Countdown premium normal */
+      .countdown-wrap { gap: 6px; margin: 12px 0 16px; }
+      .countdown-block { padding: 8px 10px; }
+      .countdown-num { font-size: 26px; }
+      .countdown-label { font-size: 9px; }
+      .countdown-sep { font-size: 20px; }
+      .premium-top-badge { font-size: 10px; padding: 4px 14px; }
+      .trust-badges { gap: 8px; }
+      .trust-item { font-size: 11px; }
     }
 
     /* Card base */
